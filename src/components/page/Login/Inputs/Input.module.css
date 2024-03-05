@@ -1,0 +1,30 @@
+.input_area {
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid #000;
+  margin-bottom: 3rem;
+}
+
+.input_area input {
+  width: 100%;
+  padding: 1.5rem;
+  border: 0;
+}
+
+.input_area input::placeholder {
+  font-size: 1.5rem;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  right: 10px;
+  top: calc(50% - 1rem);
+}
+
+/* @media screen and (min-width: 320px) and (max-width: 480px) {
+  .input_area input::placeholder {
+    font-size: 1.2rem;
+  }
+} */

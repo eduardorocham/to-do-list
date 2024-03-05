@@ -1,0 +1,33 @@
+.page_area {
+  background-color: var(--primary-gray);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  background-color: var(--white);
+  width: 37.4rem;
+  height: 50rem;
+  border-radius: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .box {
+    width: 30.4rem;
+    height: 40rem;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .box {
+    width: 24.4rem;
+    height: 40rem;
+  }
+}

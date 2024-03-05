@@ -1,7 +1,5 @@
+import styles from './Input.module.css'
 import { ElementType } from 'react'
-import styled from 'styled-components'
-
-const InputArea = styled.div``
 
 interface InputProps {
   placeholder: string
@@ -10,9 +8,9 @@ interface InputProps {
 
 export const Input = ({ placeholder, icon: Icon }: InputProps) => {
   return (
-    <InputArea>
+    <div className={styles.input_area}>
       <input placeholder={placeholder} />
-      <Icon />
-    </InputArea>
+      <Icon className={styles.icon} />
+    </div>
   )
 }

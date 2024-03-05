@@ -1,29 +1,19 @@
-import styled from 'styled-components'
-import { Input } from './Input'
-// import { FaRegUser } from 'react-icons/fa6'
-
-const PageArea = styled.div`
-  background-color: var(--primary-gray);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
-
-const Box = styled.div`
-  /* display: block; */
-  background-color: var(--white);
-  width: 37.4rem;
-  height: 50rem;
-  border-radius: 3rem;
-`
+import styles from './Login.module.css'
+// Components
+import { Input } from './Inputs/Input'
+import { PasswordInput } from './Inputs/PasswordInput'
+import { Button } from './Button'
+// Icons
+import { FaRegUser } from 'react-icons/fa6'
 
 export const LoginPage = () => {
   return (
-    <PageArea>
-      <Box>
-        {/* <Input placeholder="E-mail ou username" icon={FaRegUser} /> */}
-      </Box>
-    </PageArea>
+    <div className={styles.page_area}>
+      <div className={styles.box}>
+        <Input placeholder="Username ou e-mail" icon={FaRegUser} />
+        <PasswordInput />
+        <Button />
+      </div>
+    </div>
   )
 }

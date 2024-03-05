@@ -1,0 +1,13 @@
+.button {
+  background-color: var(--primary-black);
+  color: var(--white);
+  width: 100%;
+  padding: 1rem;
+  text-transform: uppercase;
+  border-radius: 16.6rem;
+  height: 5rem;
+}
+
+.button:hover {
+  background-color: #414247;
+}

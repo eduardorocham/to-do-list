@@ -1,3 +1,11 @@
+.area {
+  display: flex;
+}
+
 .left_area {
   display: flex;
+}
+
+.right_area {
+  width: 100%;
 }

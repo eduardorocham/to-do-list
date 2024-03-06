@@ -1,0 +1,50 @@
+@keyframes openSub {
+  from {
+    height: 0;
+    overflow-y: hidden;
+  }
+
+  to {
+    height: auto;
+    overflow-y: auto;
+  }
+}
+
+.item {
+  margin-bottom: 1rem;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.title h3 {
+  font-size: 1.6rem;
+}
+
+.sub {
+  display: flex;
+  transition: height 0.7s ease;
+  height: 0;
+  overflow-y: hidden;
+}
+
+.sub.open {
+  animation: openSub 0.7s ease forwards;
+}
+
+.lines {
+}
+
+.subitems {
+}
+
+.subitem {
+  padding: 1rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #888;
+}

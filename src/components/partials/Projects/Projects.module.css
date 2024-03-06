@@ -1,0 +1,22 @@
+.projects {
+  width: 31.8rem;
+  min-height: 100vh;
+  background-color: var(--white);
+  box-shadow: -4px 1px 8px 1px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.title button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+}

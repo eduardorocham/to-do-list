@@ -1,5 +1,14 @@
+import styles from './Layout.module.css'
 import { SideBar } from '../partials/SideBar'
+import { Projects } from '../partials/Projects'
 
 export const Layout = () => {
-  return <SideBar />
+  return (
+    <main>
+      <div className={styles.left_area}>
+        <SideBar />
+        <Projects />
+      </div>
+    </main>
+  )
 }

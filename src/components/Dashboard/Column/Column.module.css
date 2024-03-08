@@ -1,0 +1,36 @@
+.column {
+  padding: 1.5rem;
+  border: 2px dashed var(--secondary-gray);
+  border-radius: 1.5rem;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.top span {
+  font-size: 1.4rem;
+  color: var(--title-gray);
+}
+
+.top button {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.top button svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  color: #000;
+  background-color: var(--secondary-gray);
+  border-radius: 50%;
+}
+
+.top button span {
+  color: #000;
+  font-weight: 600;
+}

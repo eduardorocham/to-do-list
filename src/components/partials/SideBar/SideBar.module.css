@@ -1,9 +1,9 @@
 .sidebar {
   background-color: var(--primary-black);
-  width: 9rem;
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  padding: 1.5rem;
 }
 
 .items {

@@ -1,0 +1,21 @@
+.top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-bottom: 2rem; */
+}
+
+.top h4 {
+  font-size: 1.6rem;
+}
+
+.more {
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 2px solid var(--secondary-gray);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

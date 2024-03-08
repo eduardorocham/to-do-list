@@ -1,0 +1,40 @@
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.title svg {
+  color: var(--title-gray);
+}
+
+.title h4 {
+  font-size: 1.4rem;
+  color: var(--title-gray);
+  font-weight: 500;
+}
+
+.count {
+  font-size: 1.4rem;
+  color: #000;
+  font-weight: 700;
+}
+
+.slider {
+  height: 4px;
+  background-color: var(--secondary-gray);
+  border-radius: 2px;
+}
+
+.slider_percent {
+  width: 70%;
+  height: inherit;
+  background-color: #78d700;
+  border-radius: 2px;
+}

@@ -1,11 +1,12 @@
 import { Layout } from '@/components/Layout'
+import { Dashboard } from '@/components/Dashboard'
 
-const Dashboard = () => {
+const DashboardPage = () => {
   return (
     <Layout>
-      <h1>Aqui será o to-do</h1>
+      <Dashboard />
     </Layout>
   )
 }
 
-export default Dashboard
+export default DashboardPage

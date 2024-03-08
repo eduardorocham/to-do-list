@@ -9,6 +9,9 @@
 .items {
   max-height: 40.7rem;
   margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .item {

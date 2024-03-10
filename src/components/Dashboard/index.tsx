@@ -1,98 +1,34 @@
 import { useState } from 'react'
-import styles from './Dashboard.module.css'
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
-import { Column } from './Column'
-import { Task } from './Task'
-import { tasks } from '@/mocks/tasks'
+import { DragDropContext } from 'react-beautiful-dnd'
+import { OnDragEndResponder } from 'react-beautiful-dnd'
 import { TaskType } from '@/types/Task'
-
-const getItems = (count, offset = 0) =>
-  Array.from({ length: count }, (v, k) => k).map((k) => ({
-    id: `item-${k + offset}`,
-    content: `item ${k + offset}`,
-  }))
-
-const reorder = (list: TaskType[], startIndex: number, endIndex: number) => {
-  const result = Array.from(list)
-  const [removed] = result.splice(startIndex, 1)
-  result.splice(endIndex, 0, removed)
-
-  return result
-}
-
-const move = (source, destination, droppableSource, droppableDestination) => {
-  const sourceClone = Array.from(source)
-  const destClone = Array.from(destination)
-  const [removed] = sourceClone.splice(droppableSource.index, 1)
-
-  destClone.splice(droppableDestination.index, 0, removed)
-
-  const result = {}
-  result[droppableSource.droppableId] = sourceClone
-  result[droppableDestination.droppableId] = destClone
-
-  return result
-}
+import { Task } from './Task'
+import { Column } from './Column'
+import styles from './Dashboard.module.css'
+import { tasks } from '@/mocks/tasks'
 
 export const Dashboard = () => {
-  const [items, setItems] = useState({
-    column1: tasks,
-    column2: tasks,
-  })
+  const [tasksList, setTasksList] = useState<TaskType[]>(tasks)
 
-  const onDragEnd = (result) => {
-    // dropped outside the list
-    if (!result.destination) {
-      return
-    }
+  const onDragEnd: OnDragEndResponder = (result) => {
+    if (!result.destination) return
 
-    const reorderedItems = reorder(
-      items,
-      result.source.index,
-      result.destination.index,
-    )
+    const items = Array.from(tasksList)
+    const [reorderedItem] = items.splice(result.source.index, 1)
+    items.splice(result.destination.index, 0, reorderedItem)
 
-    setItems(reorderedItems)
+    setTasksList(items)
   }
 
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
-      <div className={styles.dashboard}>
-        <Droppable droppableId="1">
-          {(provided, snapshot) => (
-            <Column {...provided.droppableProps} ref={provided.innerRef}>
-              {items.map((task, index) => (
-                <Draggable key={task.id} draggableId={task.id} index={index}>
-                  {(provided, snapshot) => (
-                    <Task
-                      ref={provided.innerRef}
-                      {...provided.draggableProps}
-                      {...provided.dragHandleProps}
-                    />
-                  )}
-                </Draggable>
-              ))}
-            </Column>
-          )}
-        </Droppable>
-        <Droppable droppableId="2">
-          {(provided, snapshot) => (
-            <Column {...provided.droppableProps} ref={provided.innerRef}>
-              {items.map((task, index) => (
-                <Draggable key={task.id} draggableId={task.id} index={index}>
-                  {(provided, snapshot) => (
-                    <Task
-                      ref={provided.innerRef}
-                      {...provided.draggableProps}
-                      {...provided.dragHandleProps}
-                    />
-                  )}
-                </Draggable>
-              ))}
-            </Column>
-          )}
-        </Droppable>
-      </div>
-    </DragDropContext>
+    <div className={styles.dashboard}>
+      <DragDropContext onDragEnd={onDragEnd}>
+        <Column>
+          {tasks.map((task, index) => (
+            <Task draggableId={task.id} key={task.id} index={index} />
+          ))}
+        </Column>
+      </DragDropContext>
+    </div>
   )
 }
